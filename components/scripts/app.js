@@ -1,8 +1,4 @@
 var MainComponent =  React.createClass({
-    
-    componentWillMount : function(){
-      return  console.log("component will mount...");
-    },
  
     
     counter : function(){
@@ -11,33 +7,25 @@ var MainComponent =  React.createClass({
         });
     },
     
-    getInitialState : function(){
-      return {
-          count :0
-      }  
+    filterList : function(event){
+        var updatedList = this.state.initialItems;
+        updatedList =  updatedList.filter(function(item){
+            return item.toLowerCase().search(event.target.value.toLowerCase()) !== -1;
+        });
+        
+        this.setState({
+            items : updatedList
+        });
     },
-    
-    
-    render : function(){
-        return(
-            <div className="row add_padding">
-            <div className="paper_board" >
-                <h2>#Hello {this.props.name}</h2>
-                <p>lorem ipsum paragraph</p>
-                <button className="btn" onClick={this.counter}>{this.state.count} {"Count+"}</button>
-            </div>
-            { <List /> }
-            </div>
-        );
-    }
-});
-
-
-var List = React.createClass({
-    
+        
+    componentWillMount : function(){
+          this.setState({
+              items : this.state.initialItems
+          });
+    },
     getInitialState : function(){
       return {
-          items : [
+          initialItems : [
                "Apples",
                 "Broccoli",
                 "Chicken",
@@ -47,22 +35,44 @@ var List = React.createClass({
                 "Granola",
                 "Hash Browns"
             ],
-        item : []
+        items : [],
+        count :0
       }
       
     },
+
     
-    componentWillMount : function(){
-          this.setState({
-              item : this.state.items
-          })
-    },
+    
     render : function(){
         return(
-            <div className="paper_board list">
+            <div className="row add_padding">
+            <div className="paper_board" >
+                <h2># {this.props.name}</h2>
+                <p>lorem ipsum paragraph</p>
+                <button className="btn" onClick={this.counter}>{this.state.count} {"Count+"}</button>
+            </div>
+            <div className="paper_board" >
+                <h2>#Search Component</h2>
+             <input type="text" className="form_field" 
+                placeholder="Search"
+                onChange={this.filterList} />
+                { <List items={this.state.items} /> }
+            </div>
+            
+            </div>
+        );
+    }
+});
+
+
+var List = React.createClass({
+    
+    render : function(){
+        return(
+            <div className="list">
                 <ul>
                 {
-                    this.state.items.map(function(val){
+                    this.props.items.map(function(val){
                         return <li key={val}>{val}</li>
                     })
                 }
@@ -73,4 +83,4 @@ var List = React.createClass({
 });
 
 
-ReactDOM.render(<MainComponent name="shady" />,document.getElementById("get_node"));
+ReactDOM.render(<MainComponent name="Component" />,document.getElementById("get_node"));

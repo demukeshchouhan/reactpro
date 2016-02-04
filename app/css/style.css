@@ -12,11 +12,11 @@
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Raleway', sans-serif;
-  padding-top: 0.3em;
+  padding: 0.3em 0;
 }
 
 p {
-  padding-top: 0.3em;
+  padding: 0.3em 0;
 }
 
 body {
@@ -133,10 +133,40 @@ body {
   border: 1px solid rgba(12, 12, 12, 0.07);
 }
 
+.paper_board h2 {
+  color: #E82955;
+}
+
 .list li {
   list-style-position: inside;
-  list-style-type: circle;
-  list-style-color: #f00;
+  list-style-type: none;
   padding: 0.2em 0;
   color: #607D8B;
+  position: relative;
+  padding-left: 15px;
+}
+
+.list li::before {
+  content: "#";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  color: #E82955;
+}
+
+.form_field {
+  background: transparent;
+  box-shadow: 11px 14px 18px rgba(38, 38, 38, 0.1);
+  border: 1px solid rgba(12, 12, 12, 0.2);
+  max-width: 100%;
+  width: 450px;
+  min-height: 30px;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  outline: none;
+  margin-bottom: 1em;
+}
+
+.form_field:focus, .form_field:active {
+  border: 1px solid #E82955;
 }

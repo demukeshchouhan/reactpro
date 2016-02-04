@@ -2,12 +2,14 @@ var gulp =  require("gulp"),
     react =  require("gulp-react"),
     sass =  require("gulp-sass"),
     autoprefixer = require("gulp-autoprefixer"),
+    uglify = require("gulp-uglify"),
     babel = require('gulp-babel');
 
 // js
 gulp.task("js",function(){
     gulp.src("components/scripts/app.js")
         .pipe(react())
+        .pipe(uglify())
         .on("error",console.log.bind(console))
         .pipe(gulp.dest("app/js/"));
 });
