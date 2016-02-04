@@ -1,0 +1,140 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Raleway);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Raleway', sans-serif;
+    padding-top:0.3em;
+}
+p{
+    padding-top:0.3em;
+}
+
+body{
+    background:#FEA;
+    width:100%;
+    height:100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn{
+    display: inline-block;
+    background: $blueshade;
+    padding: 0.3em 0.5em;
+    color: #fff;
+    margin: 1em 0;
+    border-radius: 3px;
+    box-shadow: 5px 4px 6px rgba(70, 49, 31, 0.54);
+    border: 1px solid #46311F;
+    cursor:pointer;
+    transition:all 0.5s ease;
+    transform:translate(0px);
+    outline:none;
+    
+    &:active{
+        box-shadow: 1px 1px 5px rgba(70, 49, 52, 0.54);
+        transform:translate(5px);
+        transition:all 0.5s ease;
+    }
+    
+}
+
+.row{
+    max-width:1200px;
+    height:auto;
+    margin: 0 auto;
+}
+.add_padding{
+    padding:6em 0;
+}
+
+.header_wrapper{
+    background:$header-color;
+    width:100%;
+    height:auto;
+    float:left;
+    padding:0.2em 0;
+    box-shadow:0 2px 80px $header-color;
+    
+     .logo{
+        float:left;
+        width:6%;
+        height:auto;
+        h2{
+            color:$heading-color;
+            font-size:1.5em;
+            font-weight:900;
+            padding:0.5em 0;
+        }
+    }
+    .navigation{
+        width:40%;
+        height:auto;
+        float:left;
+         li{
+            list-style:none;
+            float:left;
+            padding:0.5em;
+            color : #f9f9f9;
+            line-height: 37px;
+            
+            a{
+                text-decoration:none;
+                color:inherit;
+            }
+        }
+    }
+    
+    .side_navigation{
+        float:right;
+         li{
+            list-style:none;
+            float:left;
+            padding:0.5em;
+            color : #f9f9f9;
+            line-height: 37px;
+            
+            
+            a{
+                text-decoration:none;
+                color:inherit;
+            }
+        }
+        
+        
+    }
+    
+    .active{
+        color:$heading-color !important;
+    }
+}
+
+.paper_board{
+    background:rgba(0, 0, 0, 0.07);
+    width:100%;
+    height:auto;
+    float:left;
+    padding:0.5em;
+    border-radius:4px;
+    margin: 1em 0;
+    box-shadow: 11px 14px 18px rgba(38, 38, 38, 0.10);
+    border: 1px solid rgba(12, 12, 12, 0.07);
+}
+
+.list{
+    li{
+        list-style-position:inside;
+        list-style-type:circle;
+        list-style-color:#f00;
+        padding:0.2em 0;
+        color:$blueshade;
+    }
+}

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>React Project</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.min.js"></script>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.min.js"></script>
  
@@ -11,6 +12,23 @@
     
 </head>
 <body>
+    
+    <div class="header_wrapper">
+        <div class="row">
+        <div class="logo"><h2>App!</h2></div>
+        <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Add</a></li>
+            <li><a href="#">Delete</a></li>
+        </ul>
+        <ul class="side_navigation">
+            <li class="active"><a href="#">Profile</a></li>
+            <li><a href="#">Logout</a></li>
+            <li><a href="#">Feedback</a></li>
+        </ul>
+        </div>
+    </div>
+    
     <div id="get_node"></div>
     
     <script  src="js/app.js"></script>
